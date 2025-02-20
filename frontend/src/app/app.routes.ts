@@ -1,5 +1,6 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 
@@ -12,17 +13,17 @@ export const routes: Routes = [{
     component: ProductListComponent
 },
 {
-    path: 'products/create/:id',
+    path: 'products/create',
     component: ProductFormComponent
 },
 {
     path: 'products/edit/:id',
     component: ProductFormComponent
-}
+},
 ];
 
 @NgModule({
-    imports: [],
-    exports: []
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutesModule { }
