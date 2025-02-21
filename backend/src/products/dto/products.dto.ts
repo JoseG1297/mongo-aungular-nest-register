@@ -1,3 +1,5 @@
+import { PartialType } from '@nestjs/mapped-types';
+
 export class CreateProductsDto {
     id: Number;
     title: string;
@@ -10,3 +12,5 @@ export class CreateProductsDto {
         }
     ];
 }
+
+export class UpdateProductsDto extends PartialType(CreateProductsDto) {}
