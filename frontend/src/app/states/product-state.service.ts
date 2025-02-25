@@ -26,9 +26,9 @@ export class ProductStateService {
     state = signalSlice({  // <--- Especificamos el tipo explícitamente
         initialState: this.initialState,
         sources: [
-          this.productsService.getProducts().pipe(
-            map((products: Product[]) => ({ products, status: "success" as const }))
-          )
+            this.productsService.getProducts().pipe(
+                map((products) => ({ products, status: "success" as const }))
+            )
         ]
-      });
+    });
 }

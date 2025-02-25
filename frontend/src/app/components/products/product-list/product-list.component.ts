@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // 🔥 Necesario para *ngFor
-import { ProductsService } from '../../../services/products.service';
-import { Product } from '../../../services/models/product.model';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // 🔥 Necesario para *
+import { ProductStateService } from '../../../states/product-state.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,14 +9,6 @@ import { Product } from '../../../services/models/product.model';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
-  products: Product[] = [];
-
-  constructor(private productsService: ProductsService) {}
-
-  ngOnInit(): void {
-    this.productsService.getProducts().subscribe((data: any) => {
-      this.products = data;
-    });
-  }
+export class ProductListComponent {
+  productState = inject(ProductStateService);
 }

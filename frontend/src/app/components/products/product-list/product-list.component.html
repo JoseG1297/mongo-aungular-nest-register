@@ -1,6 +1,6 @@
 <p>product-list works!</p>
-
-<div *ngFor="let product of products">
+<!-- <pre>{{ productState.state().products | json }}</pre> -->
+<div *ngFor="let product of productState.state().products">
     <h2>{{ product.title }}</h2>
     <p>{{ product.description }}</p>
     <ul>
