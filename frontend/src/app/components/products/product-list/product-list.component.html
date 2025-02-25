@@ -1,10 +1,10 @@
 <p>product-list works!</p>
 
-<div *NgFor="let product of products">
+<div *ngFor="let product of products">
     <h2>{{ product.title }}</h2>
     <p>{{ product.description }}</p>
     <ul>
-        <li *NgFor="let detail of product.details">
+        <li *ngFor="let detail of product.details">
             Price: {{ detail.price }}, Amount: {{ detail.amount }}, Image: {{ detail.image }}
         </li>
     </ul>
