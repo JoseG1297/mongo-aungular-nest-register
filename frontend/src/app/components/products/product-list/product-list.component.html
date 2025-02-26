@@ -1,5 +1,8 @@
 <!-- <pre>{{ productState.state().products | json }}</pre> -->
-<div class="mx-auto max-w-screen-xl">
+<div class="mx-auto max-w-screen-xl mt-10">
+    @if(productState.state().status === "loading"){
+        <h3>loading..</h3>
+    } 
     <div class="grid grid-cols-[repeat(4,400px)]" gap-6>
         @for(product of productState.state().products; track product)
         {
