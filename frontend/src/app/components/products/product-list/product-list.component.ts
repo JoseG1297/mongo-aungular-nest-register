@@ -7,8 +7,7 @@ import { ProductCardComponent } from '../ui/product-card/product-card.component'
   selector: 'app-product-list',
   standalone: true, // ⬅️ Indica que el componente es independiente
   imports: [CommonModule, ProductCardComponent], // ⬅️ Agrega CommonModule aquí
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
   productState = inject(ProductStateService);
