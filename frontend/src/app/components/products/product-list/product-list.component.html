@@ -1,12 +1,9 @@
-<p>product-list works!</p>
 <!-- <pre>{{ productState.state().products | json }}</pre> -->
-<div *ngFor="let product of productState.state().products">
-    <app-product-card></app-product-card>
-    <h2>{{ product.title }}</h2>
-    <p>{{ product.description }}</p>
-    <ul>
-        <li *ngFor="let detail of product.details">
-            Price: {{ detail.price }}, Amount: {{ detail.amount }}, Image: {{ detail.image }}
-        </li>
-    </ul>
+<div class="mx-auto max-w-screen-xl">
+    <div class="grid grid-cols-[repeat(4,400px)]" gap-6>
+        @for(product of productState.state().products; track product)
+        {
+            <app-product-card class="block" [product]="product"></app-product-card>
+        }
+    </div>
 </div>
