@@ -11,7 +11,7 @@ export class ProductsService extends BaseHttpService{
   private newUrl = this.apiUrl + "/products";
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.newUrl);
+    return this.http.get<any[]>(this.newUrl);
   }
 
   getProduct(id: string): Observable<Product> {
